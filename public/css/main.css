@@ -260,15 +260,11 @@ body {
     border-radius: 50%;
     font-size: 20px;
     cursor: pointer;
-    display: none;
     z-index: 99;
     transition: 0.3s ease;
     box-shadow: 0 5px 20px rgba(30, 42, 91, 0.3);
 }
 
-.btn-back-to-top.show {
-    display: block;
-}
 
 .btn-back-to-top:hover {
     background: linear-gradient(135deg, #ffff00 0%, #ffd700 100%);
