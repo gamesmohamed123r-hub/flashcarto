@@ -18,11 +18,12 @@ function Signform() {
         setSubmitted(true);
 
         if (validate(username, email, password, rePassword)) {
-            // Success! Redirect to home page or wherever you want
+            
+            // Option 1: Navigate to home page 
             console.log("Form Submitted Successfully");
             
-            // Option 1: Navigate to home page
             navigate("/");
+            
             
             // Option 2: Or if you want to refresh the current page
             // window.location.reload();
