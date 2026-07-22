@@ -7,7 +7,7 @@ function Navbar(){
           <nav className="navbar navbar-expand-lg navbar-dark">
             <div className="container-fluid">
                 <Link className="navbar-brand" to="/">
-                    <img src="img/102.png" style={{width: '200px'}} alt="logo"/>
+                    <img src="/img/102.png" style={{width: '200px'}} alt="logo"/>
                 </Link>
 
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,7 +20,7 @@ function Navbar(){
                             <Link className="nav-link" aria-current="page" to="/">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="product.html">Products</a>
+                            <Link className="nav-link" to="/product">Products</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/about">About</Link>
@@ -29,9 +29,9 @@ function Navbar(){
                             <Link className="nav-link" to="/#secondsection">Contact</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">
+                            <Link className="nav-link" to="/cart">
                                 <i className="fas fa-shopping-cart"></i> Cart
-                            </a>
+                            </Link>
                         </li>              
                     </ul>
                     

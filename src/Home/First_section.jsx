@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function First_section(){
     return(
         <div>
@@ -32,9 +34,9 @@ function First_section(){
                     <p className="firstdescription">
                         Experience the fastest online shopping experience with our curated collection of premium products. Shop smart, save more, and enjoy free shipping on all orders!
                     </p>
-                    <button className="btn-shop-now" onclick="window.location.href='product.html'">
+                    <Link className="btn-shop-now" to="/product">
                         <i className="fas fa-bolt"></i> Start Shopping
-                    </button>
+                    </Link>
                 </div>
             </div>
            </div>

@@ -1,6 +1,5 @@
 * {
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
@@ -1003,4 +1002,80 @@ body {
     .btn-signup {
         font-size: 0.9rem;
     }
+}
+
+/* =================== SINGLEPRODUCT PAGE =================== */
+
+.container {
+    margin-top: 80px !important;
+    padding: 40px 20px !important;
+    background-color: #f5f7fa;
+    min-height: 100vh;
+}
+
+.row {
+    background-color: white !important;
+    padding: 30px !important;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.row img {
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.row h2 {
+    color: #1a1a1a;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.row p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.row h5 {
+    color: #1a1a1a;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.row .text-danger {
+    color: #dc3545 !important;
+    font-size: 22px;
+    margin-top: 15px;
+}
+
+.row .btn {
+    margin-top: 20px;
+    padding: 12px 30px;
+    font-weight: 600;
+    border-radius: 25px;
+    transition: 0.3s ease;
+}
+
+.row .btn-success {
+    background-color: #28a745;
+    border: none;
+}
+
+.row .btn-success:hover {
+    background-color: #20c997;
+    transform: translateY(-2px);
+}
+
+.row .btn-danger {
+    background-color: #dc3545;
+    border: none;
+    color: white;
+}
+
+.row .btn-danger:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
 }

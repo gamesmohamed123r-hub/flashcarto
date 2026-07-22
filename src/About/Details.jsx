@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Details() {
   return (
@@ -165,9 +166,9 @@ function Details() {
             <div className="cta-content wow animate__bounceIn">
                 <h2>Ready to Experience the Flash Difference?</h2>
                 <p>Join thousands of satisfied customers and start your amazing shopping journey today!</p>
-                <a href="product.html" className="btn-cta">
+                <Link to="/product" className="btn-cta">
                     <i className="fas fa-arrow-right"></i> Start Shopping Now
-                </a>
+                </Link>
             </div>
         </div>
      </section>

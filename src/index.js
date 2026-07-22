@@ -5,6 +5,12 @@ import App from './App';
 import Aboutpage from "./About/Aboutpage";
 import Signup from "./Signup/Signup";
 import Loginform from "./Signup/Loginform";
+import Productpage from "./Product/Productpage";
+import Singleproduct from "./Allsingleproduct/Singleproduct";
+import { Alldata } from "./Data/Alldata";
+import Cartpage from "./Cart/Cartpage";
+import { CartProvider } from "react-use-cart";
+
 
 const router = createBrowserRouter([
   {
@@ -23,8 +29,24 @@ const router = createBrowserRouter([
     path:"login",
     element:<Loginform/>
   },
+  {
+   path:"product",
+   element:<Productpage/>
+  },
+  {
+    path:"singleProduct/:id",
+    element:<Singleproduct/>
+  },
+  {
+    path:"cart",
+    element:<Cartpage/>
+  }
 ]);
 
 createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+  <CartProvider>
+  <Alldata>
+    <RouterProvider router={router} />
+  </Alldata>
+  </CartProvider>
 );
