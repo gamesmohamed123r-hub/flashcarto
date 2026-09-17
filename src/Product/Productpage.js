@@ -4,18 +4,30 @@ import BackToTop from '../Components/BackToTop'
 import ScrollToHash from '../Components/ScrollToHash'
 import { Link } from 'react-router-dom';
 import { apivalue } from '../Data/Alldata';
-import { useCart } from 'react-use-cart';
+import { CartProvider, useCart } from 'react-use-cart';
+import { ToastContainer , toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function Productpage() {
    const [search,setSearch]=useState(0);
    const text=useContext(apivalue);
    const {addItem}=useCart();
 
-    
-    const getSearch= (event)=>{
+   const getSearch= (event)=>{
        setSearch(event.target.value)
     }
+
+   const  messageaddcart=(item)=>{
+      addItem(item);
+      toast.success(`${item.title} added to cart 😃`,{
+         position:"bottom-right",
+         autoClose:2000,
+      });
+   } 
+
   return (
     <div>
+      <ToastContainer/>
       <Navbar/>
       <div className='container'>
          <div className='row'> 
@@ -33,7 +45,7 @@ function Productpage() {
                                <h4>{item.price} $</h4>
                                <Link to={`/singleProduct/${item.id}`} className='btn btn-dark'>Details</Link>
                                <br></br>
-                               <button onClick={()=>addItem(item)} className='btn btn-dark' >add to cart</button>
+                               <button onClick={()=>messageaddcart(item)} className='btn btn-dark' >add to cart</button>
                             </div>
                         ): item.id==search?(
                             <div className='col-md-4 text-center'>
@@ -44,7 +56,7 @@ function Productpage() {
                                <h4>{item.price} $</h4>
                                <Link to={`/singleProduct/${item.id}`} className='btn btn-dark'>Details</Link>
                                <br></br>
-                               <button onClick={()=>addItem(item)} className='btn btn-dark' >add to cart</button>
+                               <button onClick={()=>messageaddcart(item)} className='btn btn-dark' >add to cart</button>
                             </div>
                         ): item.title.toLowerCase().includes(search.toLowerCase())?(
                              <div className='col-md-4 text-center'>
@@ -55,10 +67,10 @@ function Productpage() {
                                <h4>{item.price} $</h4>
                                <Link to={`/singleProduct/${item.id}`} className='btn btn-dark'>Details</Link>
                                <br></br>
-                               <button onClick={()=>addItem(item)} className='btn btn-dark' >add to cart</button>
+                               <button onClick={()=>messageaddcart(item)} className='btn btn-dark' >add to cart</button>
                             </div>
-                        ):null
-                    })
+                        ):null                       
+                     })
                  }
          </div>
       </div>
