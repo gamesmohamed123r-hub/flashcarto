@@ -4,13 +4,24 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { apivalue } from '../Data/Alldata';
 import { useCart } from 'react-use-cart';
+import { ToastContainer , toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Singleproduct() {
     const {id}=useParams();
     const text=useContext(apivalue);
     const {addItem}=useCart();
+    
+    const messageaddcart=(item)=>{
+      addItem(item);
+            toast.success(`${item.title} added to cart 😃`,{
+               position:"bottom-right",
+               autoClose:2000,
+            });
+    }
   return (
     <div>
+      <ToastContainer/>
       <Navbar/>
       <div className='container'>
          {text.map((item)=>{
@@ -27,7 +38,7 @@ function Singleproduct() {
                       <h4 className='mt-4'>rating{item.rating}</h4>
                       <h4 className='mt-4'>price{item.price}</h4>
                       <br></br>
-                      <button onClick={()=>addItem(item)} className='btn btn-dark' >add to cart</button>
+                      <button onClick={()=>messageaddcart(item)} className='btn btn-dark' >add to cart</button>
                       <Link to="/product" className='btn btn-danger'>Return</Link>
                     </div>
                 </div>
