@@ -9,7 +9,7 @@ function Details() {
         <div className="container">
             <div className="about-hero-content">
                 <h1>About <span className="highlight">Flashcarto</span></h1>
-                <p>Your Ultimate Online Shopping Destination for Premium Products at Lightning-Fast Prices</p>
+                <p>.............................................Your Ultimate Online Shopping Destination for Premium Products at Lightning-Fast Prices.........................</p>
             </div>
         </div>
      </section>

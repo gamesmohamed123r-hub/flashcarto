@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
+import { useCart } from 'react-use-cart';
 
 function Navbar(){
+    const{totalItems}=useCart();
     return(
         <div>
         <header>
@@ -30,7 +32,7 @@ function Navbar(){
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/cart">
-                                <i className="fas fa-shopping-cart"></i> Cart
+                                <i className="fas fa-shopping-cart"></i> Cart {totalItems}
                             </Link>
                         </li>              
                     </ul>

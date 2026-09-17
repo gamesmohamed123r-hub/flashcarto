@@ -19,7 +19,7 @@ function Cartpage() {
         )
     }
   return (
-    <div>
+    <CartProvider>
         <Navbar/>
         <div className='container'>
           <div className='row'>
@@ -75,7 +75,7 @@ function Cartpage() {
             </div>
           </div>
          </div>
-    </div>
+    </CartProvider>
   )
 }
 
